@@ -5,15 +5,15 @@ const count = ref(1)
 const names = ref<String[] | unknown>([])
 
 function increase() {
-  count.value = count.value*2
+  count.value = count.value * 2
 }
 
 function decrease() {
-  count.value = count.value/2;
+  count.value = count.value / 2;
   count.value = Math.ceil(count.value)
 }
 
-function cock(){
+function cock() {
   fetch("http://localhost:8080/test/data?count=3")
     .then(cum => cum.json() as unknown as string[])
     .then(data => names.value = data)
@@ -31,11 +31,11 @@ function cock(){
   <button type="button" @click="cock()">cock.</button>
   <ul>
     <li v-if="Array.isArray(names) && (names as any[]).every(v => typeof v === 'string')" v-for="name in names">
-        {{ name }}
+      {{ name }}
     </li>
     <li v-else>
-        an error occurred
-        {{ names }}
+      an error occurred
+      {{ names }}
     </li>
   </ul>
 </template>
