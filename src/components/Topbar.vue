@@ -1,21 +1,16 @@
 <script setup lang="ts">
 import { useUserStore } from "../data/User";
+import { RouterLink } from "vue-router";
 const user = useUserStore()
 </script>
 
 <template>
     <div class="mainmenu">
-        <a href="testing page"></a>
-        <a href="testing page">test</a>
-        <input type="text" id="search" name="search" style=" display: flex;
-    align-self:center;
-    width:auto;
-    height: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;">
+        <router-link to="testing page">test</router-link>
+        <input type="text" id="search" name="search">
         <label for="search">search?</label>
-        <a href="testing page">test</a>
-        <a href="testing page">test</a>
+        <router-link to="testing page">test</router-link>
+        <router-link to="testing page">test</router-link>
         <p v-if="user.tag == 'not logged in'">not logged in</p>
         <p v-else>user: {{ user.name }}</p>
     </div>
@@ -23,13 +18,12 @@ const user = useUserStore()
 
 <style>
 .mainmenu {
+    box-sizing: border-box;
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: row;
-    align-content: space-around;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #000000;
     height: 4rem;
-    width: 100vw;
+    padding: 1rem;
 }
 </style>
