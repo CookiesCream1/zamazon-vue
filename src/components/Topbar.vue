@@ -6,12 +6,12 @@ const user = useUserStore()
 
 <template>
     <div class="mainmenu">
-        <router-link to="testing page">test</router-link>
+        <router-link to="/">home</router-link>
         <input type="text" id="search" name="search">
         <label for="search">search?</label>
-        <router-link to="testing page">test</router-link>
-        <router-link to="testing page">test</router-link>
-        <p v-if="user.tag == 'not logged in'">not logged in</p>
+        <router-link to="/test/hworld">test</router-link>
+        <router-link to="/test/hworld">test</router-link>
+        <router-link to="/fallback" v-if="user.tag == 'not logged in'">not logged in</router-link>
         <p v-else>user: {{ user.name }}</p>
     </div>
 </template>
