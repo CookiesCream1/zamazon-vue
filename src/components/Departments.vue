@@ -1,41 +1,45 @@
 <script setup lang="ts">
 defineProps<{
-    Deparements: { name: string, checked: boolean }[]
-    title: string
-}>()
+  Deparements: { name: string; checked: boolean }[];
+  title: string;
+}>();
 </script>
 
 <template>
-    <div class="alignment">
-        <h3>{{ title }}</h3>
-        <ul>
-            <li v-for="department in Deparements">
-                <div style="display:flex; gap: .5rem">
-                    <input type="checkbox" :id="department.name" v-model="department.checked">
-                    <p>{{ department.name }}</p>
-                </div>
-            </li>
-        </ul>
-    </div>
+  <div class="alignment">
+    <h3>{{ title }}</h3>
+    <ul>
+      <li v-for="department in Deparements">
+        <div style="display: flex; gap: 0.5rem">
+          <input
+            type="checkbox"
+            :id="department.name"
+            v-model="department.checked"
+          />
+          <p>{{ department.name }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
-<style >
+<style>
 .alignment {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .fix {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 </style>
